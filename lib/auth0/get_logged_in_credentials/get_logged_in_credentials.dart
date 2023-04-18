@@ -3,7 +3,7 @@ import 'get_logged_in_credentials_stub.dart'
     if (dart.library.js) 'get_logged_in_credentials_web.dart' as impl;
 
 /// Cross-platform method for fetching authenticated user ID.
-Future<String?> getLoggedInCredentials({
+Future<Map<String, dynamic>> getLoggedInCredentials({
   required String auth0Domain,
   required String auth0ClientId,
   String? redirectUri,

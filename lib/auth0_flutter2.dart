@@ -94,6 +94,11 @@ class Auth0Flutter2 {
     );
   }
 
+  Future<Map<String, dynamic>?> getLoggedInCredentials() async {
+    return await auth02.getLoggedInCredentials(
+        auth0Domain: auth0Domain, auth0ClientId: auth0ClientId);
+  }
+
   /// If user is not authenticated, shows universal login.
   /// Returns user ID of logged in user.
   Future<String?> loginUser({
