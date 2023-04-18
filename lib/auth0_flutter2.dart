@@ -94,9 +94,14 @@ class Auth0Flutter2 {
     );
   }
 
+  /// Fetches the currently authenticated user credentials.
+  /// Returns null if no user is authenticated.
   Future<Map<String, dynamic>?> getLoggedInCredentials() async {
     return await auth02.getLoggedInCredentials(
-        auth0Domain: auth0Domain, auth0ClientId: auth0ClientId);
+      auth0Domain: auth0Domain,
+      auth0ClientId: auth0ClientId,
+      redirectUri: redirectUri,
+    );
   }
 
   /// If user is not authenticated, shows universal login.

@@ -1,5 +1,5 @@
 /// Stub method for getLoggedInUserId.
-Future<Map<String, dynamic>> getLoggedInCredentials({
+Future<Map<String, dynamic>?> getLoggedInCredentials({
   required String auth0Domain,
   required String auth0ClientId,
   String? redirectUri,
