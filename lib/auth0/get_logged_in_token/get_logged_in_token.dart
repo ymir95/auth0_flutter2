@@ -7,9 +7,11 @@ Future<String?> getLoggedInToken({
   required String auth0Domain,
   required String auth0ClientId,
   String? redirectUri,
+  required String audience,
 }) =>
     impl.getLoggedInToken(
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
+      audience: audience,
       redirectUri: redirectUri,
     );

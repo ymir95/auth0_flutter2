@@ -6,6 +6,7 @@ Future<String?> getLoggedInToken({
   required String auth0Domain,
   required String auth0ClientId,
   String? redirectUri,
+  required String audience,
 }) async {
   try {
     Auth0 auth0 = initAuth0Mobile(

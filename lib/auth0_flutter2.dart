@@ -106,12 +106,12 @@ class Auth0Flutter2 {
 
   /// Fetches an access token for the user to access API's.
   /// Returns null if no user is authenticated.
-  Future<String?> getLoggedInToken() async {
+  Future<String?> getLoggedInToken({required String audience}) async {
     return await auth02.getLoggedInToken(
-      auth0Domain: auth0Domain,
-      auth0ClientId: auth0ClientId,
-      redirectUri: redirectUri,
-    );
+        auth0Domain: auth0Domain,
+        auth0ClientId: auth0ClientId,
+        redirectUri: redirectUri,
+        audience: audience);
   }
 
   /// If user is not authenticated, shows universal login.
