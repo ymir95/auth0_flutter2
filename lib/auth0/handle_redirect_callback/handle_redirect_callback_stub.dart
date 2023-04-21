@@ -2,6 +2,7 @@
 Future<bool> handleRedirectCallback({
   required String auth0Domain,
   required String auth0ClientId,
+  required String audience,
   String? redirectUri,
   String? url,
 }) =>

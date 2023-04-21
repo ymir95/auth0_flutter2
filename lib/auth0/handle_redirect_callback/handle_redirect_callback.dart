@@ -6,10 +6,12 @@ import 'handle_redirect_callback_stub.dart'
 Future<bool> handleRedirectCallback({
   required String auth0Domain,
   required String auth0ClientId,
+  required String audience,
   String? redirectUri,
   String? url,
 }) =>
     impl.handleRedirectCallback(
+      audience: audience,
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
       redirectUri: redirectUri,

@@ -99,6 +99,7 @@ class Auth0Flutter2 {
   /// Returns null if no user is authenticated.
   Future<String?> getLoggedInUserId() async {
     return await auth02.getLoggedInUserId(
+      audience: audience,
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
       redirectUri: redirectUri,
@@ -146,6 +147,7 @@ class Auth0Flutter2 {
   Future<bool> handleWebLoginCallback(String? url) async {
     try {
       return await auth02.handleRedirectCallback(
+        audience: audience,
         auth0Domain: auth0Domain,
         auth0ClientId: auth0ClientId,
         redirectUri: redirectUri,
@@ -159,6 +161,7 @@ class Auth0Flutter2 {
   /// Logs out current user.
   Future<void> logoutUser() async {
     return auth02.logoutUser(
+      audience: audience,
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
       scheme: scheme,
