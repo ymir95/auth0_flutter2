@@ -22,6 +22,7 @@ Future<String?> loginUser({
   try {
     // Check if user is logged in.
     final user = await getLoggedInUserId(
+      audience: audience,
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
     );
@@ -38,6 +39,7 @@ Future<String?> loginUser({
 
       // Check again if user is logged in (after auth attempt).
       final nowUser = await getLoggedInUserId(
+        audience: audience,
         auth0Domain: auth0Domain,
         auth0ClientId: auth0ClientId,
       );

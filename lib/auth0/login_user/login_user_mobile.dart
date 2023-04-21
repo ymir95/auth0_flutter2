@@ -6,6 +6,7 @@ import 'package:auth0_flutter2/auth0/init_auth0/init_auth0_mobile.dart';
 Future<String?> loginUser({
   required String auth0Domain,
   required String auth0ClientId,
+  required String audience,
   String? scheme,
   String? redirectUri,
   Future<void> Function()? afterLogin,
@@ -18,6 +19,7 @@ Future<String?> loginUser({
   try {
     // Check if user is logged in.
     final user = await getLoggedInUserId(
+      audience: audience,
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
     );
@@ -28,6 +30,7 @@ Future<String?> loginUser({
 
       // Check again if user is logged in (after auth attempt).
       final nowUser = await getLoggedInUserId(
+        audience: audience,
         auth0Domain: auth0Domain,
         auth0ClientId: auth0ClientId,
       );
