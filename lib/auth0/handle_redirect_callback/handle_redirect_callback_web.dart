@@ -3,13 +3,14 @@ import 'package:auth0_flutter2/auth0/auth0_flutter_web/auth0_flutter_web.dart'
     as auth0_web;
 
 /// Logs in user (via universal login) on web.
-Future<bool> handleRedirectCallback({
-  required String auth0Domain,
-  required String auth0ClientId,
-  required String? redirectUri,
-  required String? url,
-}) async {
+Future<bool> handleRedirectCallback(
+    {required String auth0Domain,
+    required String auth0ClientId,
+    required String? redirectUri,
+    required String? url,
+    required String audience}) async {
   auth0_web.Auth0? auth0 = await initAuth0Web(
+    audience: audience,
     auth0Domain: auth0Domain,
     auth0ClientId: auth0ClientId,
     redirectUri: redirectUri,

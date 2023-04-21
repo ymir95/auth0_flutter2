@@ -6,9 +6,11 @@ import 'get_logged_in_credentials_stub.dart'
 Future<Map<String, dynamic>?> getLoggedInCredentials({
   required String auth0Domain,
   required String auth0ClientId,
+  required String audience,
   String? redirectUri,
 }) =>
     impl.getLoggedInCredentials(
+      audience: audience,
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
       redirectUri: redirectUri,

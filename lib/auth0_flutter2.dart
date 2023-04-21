@@ -69,6 +69,14 @@ class Auth0Flutter2 {
     return instance._scheme!;
   }
 
+  static String get audience {
+    return instance._audience ?? "";
+  }
+
+  static set audience(String audience) {
+    instance._audience = audience;
+  }
+
   /// The instance of [Auth0Flutter2].
   static final Auth0Flutter2 instance = Auth0Flutter2._();
 
@@ -84,6 +92,9 @@ class Auth0Flutter2 {
   /// For Android applications, the custom scheme.
   String? _scheme;
 
+  /// For getting an access token to a specific API
+  String? _audience;
+
   /// Fetches the currently authenticated user ID.
   /// Returns null if no user is authenticated.
   Future<String?> getLoggedInUserId() async {
@@ -98,6 +109,7 @@ class Auth0Flutter2 {
   /// Returns null if no user is authenticated.
   Future<Map<String, dynamic>?> getLoggedInCredentials() async {
     return await auth02.getLoggedInCredentials(
+      audience: audience,
       auth0Domain: auth0Domain,
       auth0ClientId: auth0ClientId,
       redirectUri: redirectUri,
@@ -124,6 +136,7 @@ class Auth0Flutter2 {
       auth0ClientId: auth0ClientId,
       redirectUri: redirectUri,
       scheme: scheme,
+      audience: audience,
       // afterLogin: afterLogin,
     );
   }

@@ -5,6 +5,7 @@ import 'package:auth0_flutter2/auth0/auth0_flutter_web/auth0_flutter_web.dart'
 Future<auth0_web.Auth0> initAuth0Web({
   required String auth0Domain,
   required String auth0ClientId,
+  required String audience,
   String? redirectUri,
 }) async {
   try {
@@ -15,6 +16,7 @@ Future<auth0_web.Auth0> initAuth0Web({
         redirect_uri: redirectUri,
         useRefreshTokens: true,
         cacheLocation: "localstorage",
+        audience: audience,
       ),
     );
   } catch (e) {

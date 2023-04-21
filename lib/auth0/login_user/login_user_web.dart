@@ -8,15 +8,16 @@ import 'package:flutter/foundation.dart';
 Future<String?> loginUser({
   required String auth0Domain,
   required String auth0ClientId,
+  required String audience,
   String? scheme,
   required String? redirectUri,
   Future<void> Function()? afterLogin,
 }) async {
   auth0_web.Auth0? auth0 = await initAuth0Web(
-    auth0Domain: auth0Domain,
-    auth0ClientId: auth0ClientId,
-    redirectUri: redirectUri,
-  );
+      auth0Domain: auth0Domain,
+      auth0ClientId: auth0ClientId,
+      redirectUri: redirectUri,
+      audience: audience);
 
   try {
     // Check if user is logged in.

@@ -2,6 +2,7 @@
 Future<Map<String, dynamic>?> getLoggedInCredentials({
   required String auth0Domain,
   required String auth0ClientId,
+  required String audience,
   String? redirectUri,
 }) =>
     throw UnsupportedError(
