@@ -18,10 +18,14 @@ Future<String?> getLoggedInToken({
       redirectUri: redirectUri,
     );
 
-    var token = await auth0.getTokenSilently(
-        options: GetTokenSilentlyOptions(
+    // var token = await auth0.getTokenSilently(
+    //     options: GetTokenSilentlyOptions(
+    //   audience: audience,
+    //   redirect_uri: redirectUri ?? "",
+    // ));
+    var token = await auth0.getTokenWithPopup(
+        options: GetTokenWithPopupOptions(
       audience: audience,
-      redirect_uri: redirectUri ?? "",
     ));
     return token;
   } catch (e) {
