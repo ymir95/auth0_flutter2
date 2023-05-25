@@ -20,9 +20,9 @@ Future<String?> getLoggedInToken({
 
     var token = await auth0.getTokenSilently(
         options: GetTokenSilentlyOptions(
-      audience: audience,
-      redirect_uri: redirectUri ?? "",
-    ));
+            audience: audience,
+            redirect_uri: redirectUri ?? "",
+            scope: "offline_access"));
     return token;
   } catch (e) {
     return null;
